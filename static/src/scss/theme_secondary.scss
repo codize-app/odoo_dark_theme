@@ -1,0 +1,40 @@
+$o-webclient-background-color: $body-bg;
+$o-control-panel-background-color: $body-bg;
+
+$o-community-color: $primary;
+
+$o-brand-odoo: $o-community-color;
+$o-brand-primary: $o-community-color;
+
+$o-view-background-color: $body-bg;
+
+
+//misc
+$border-color: $gray-700;
+
+// Navbar
+$o-navbar-inverse-link-hover-bg: $primary;
+
+// Breadcrumb
+$breadcrumb-bg: $body-bg;
+
+// Nav
+$nav-tabs-link-active-bg: $body-bg;
+
+// Table
+$table-head-bg: $gray-500 !default;
+$table-head-color: $white !default;
+
+// Input
+$input-bg: $body-bg;
+
+// Note
+.note-editor .note-editing-area .note-editable {
+    color: $body-color;
+    background: $body-bg;
+}
+
+// body
+body.bg-100 {
+    background: $body-bg !important;
+}

@@ -1,0 +1,605 @@
+// Darkly 5.1.0
+// Bootswatch
+
+$font-family-base: 'Poiret One', sans-serif !default;
+// Typography
+
+.blockquote {
+  &-footer {
+    color: $gray-600;
+  }
+}
+
+// Forms
+.input-group-addon {
+  color: $white;
+}
+
+.form-floating > label {
+  color: $gray-700;
+}
+
+// Navs
+
+.nav-tabs,
+.nav-pills {
+  .nav-link,
+  .nav-link.active,
+  .nav-link.active:focus,
+  .nav-link.active:hover,
+  .nav-item.open .nav-link,
+  .nav-item.open .nav-link:focus,
+  .nav-item.open .nav-link:hover {
+    color: $white;
+  }
+}
+
+.breadcrumb a {
+  color: $white;
+}
+
+.pagination {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+// Indicators
+
+.alert {
+  border: none;
+  color: $white;
+
+  a,
+  .alert-link {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
+      } @else {
+        background-color: $value;
+      }
+    }
+  }
+}
+
+//////
+///
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+  }
+  
+  body {
+      @include scrollbars(.5em, slategray);
+  }
+  select {
+      @include scrollbars(.5em, slategray);
+  }
+  .settings {
+      @include scrollbars(.5em, slategray);
+  }
+  .o_search_panel {
+      @include scrollbars(.5em, slategray);
+  }
+  .o_content {
+      @include scrollbars(.5em, slategray);
+  }
+  .o_kanban_view {
+      @include scrollbars(.5em, slategray);
+  }
+  .fc-scroller {
+      @include scrollbars(.5em, slategray);
+  }
+  .o_MessageList {
+      @include scrollbars(.5em, slategray);
+  }
+  .dropdown-menu.show {
+      @include scrollbars(.5em, slategray);
+  }
+
+// Background
+.bg-100 {
+    background: $body-bg !important;
+}
+
+// Form Sheet
+.o_form_view .o_form_sheet_bg {
+    background: none;
+    border-bottom: 1px solid $gray-700;
+}
+
+.o_form_view .o_form_sheet_bg > .o_form_sheet {
+    background: $body-bg;
+    border: 1px solid $gray-700;
+}
+
+// Text
+.text-dark {
+    color: $gray-500 !important;
+}
+
+// Button Box
+.o_form_view .oe_button_box {
+    box-shadow: inset 0 -0.2px 0 $body-color;
+}
+.o_form_view .oe_button_box .btn.oe_stat_button {
+    height: 50px;
+}
+
+// Table
+th {
+    font-weight:normal;
+}
+
+.o_list_view thead,
+.o_list_view tfoot {
+    background-color: $gray-700;
+}
+
+.o_list_view .o_list_table thead,
+.o_list_view .o_list_table tfoot {
+    color: $white;
+    border-bottom: 1px solid $gray-500;
+    background-color: $gray-700;
+}
+
+.o_list_view .o_list_table tr:focus-within, .o_list_view .o_list_table.table-striped tr:focus-within {
+    background-color: $gray-800;
+}
+
+.o_list_view .o_list_table .o_data_row.o_selected_row >
+    .o_data_cell:not(.o_readonly_modifier):not(.o_invisible_modifier):not(.o_handle_cell) {
+    background-color: $gray-800;
+}
+
+.o_list_view .o_list_table thead th:focus-within, .o_list_view .o_list_table tbody.o_keyboard_navigation td:focus-within {
+    background-color: $gray-800;
+}
+
+.o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label {
+    padding: 0 15px 0 10px;
+}
+
+.o_form_view .o_horizontal_separator {
+    padding: 0 0 0 8px;
+}
+
+// Input
+input {
+    color: $body-color;
+    background: $body-bg;
+    border: 1px solid $gray-700;
+}
+
+.o_input {
+    color: $body-color;
+    background: $body-bg;
+    border: 1px solid $gray-700;
+}
+
+.o_required_modifier.o_input, .o_required_modifier .o_input {
+    background-color: $gray-800 !important;
+}
+// TextArea
+textarea {
+    color: $body-color;
+    background: $body-bg;
+    border: 1px solid $gray-700;
+}
+
+// Select
+select {
+    background: $body-bg;
+}
+
+
+// Status Bar
+.o_form_view .o_form_statusbar {
+    border-bottom: 1px solid $gray-700;
+}
+
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):before,
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):after {
+    border-left: 11px solid $gray-700;
+}
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):before {
+    right: -11px;
+    border-left-color: $gray-600;
+}
+
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.btn-primary.disabled {
+    color: $gray-700;
+    background-color: $gray-200;
+}
+
+// Button
+.btn-fill-secondary:hover, .btn-secondary:hover{
+    color: $white;
+    background-color: $gray-700;
+}
+
+.btn:hover, .o_dropdown:hover .o_dropdown_toggler_btn, .o_dropdown.show .o_dropdown_toggler_btn {
+    color: $white;
+}
+
+// Control Panel
+.o_control_panel {
+    border-bottom: 1px solid $gray-700;
+ }
+
+// Search Panel
+.o_search_panel {
+    background-color: $body-bg;
+}
+
+.o_search_panel .list-group-item header.active {
+    color: $white;
+    background-color: $gray-800;
+}
+
+// Search View
+.o_searchview .o_searchview_facet {
+    border: 1px solid $gray-700;
+    background: $body-bg;
+}
+
+.o_searchview {
+    background-color: $body-bg;
+    border: 1px solid $gray-700;
+}
+
+// Kanban
+.o_kanban_view .o_kanban_record, .o_kanban_view .o_kanban_quick_create {
+    border: 1px solid $gray-700;
+    background-color: $body-bg;
+}
+
+.o_kanban_view.o_kanban_grouped {
+    background-color: $body-bg;
+}
+
+.o_kanban_view .oe_kanban_card.oe_kanban_global_click,
+.o_kanban_view .oe_kanban_card.oe_kanban_global_click_edit,
+.o_kanban_view .o_kanban_record.oe_kanban_global_click,
+.o_kanban_view .o_kanban_record.oe_kanban_global_click_edit {
+   &:focus, &:focus-within, &:active {
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+// Main Navbar
+
+.o_main_navbar > a {
+  text-shadow: -.25px -.25px 0 transparent,
+                .25px .25px transparent;
+}
+
+.o_main_navbar > a:hover {
+  background-color: transparent !important;
+  text-shadow: -.25px -.25px 0 $white,
+                .25px .25px $white;
+}
+
+.o_main_navbar > .o_menu_brand {
+  text-shadow: -.25px -.25px 0 transparent,
+                .25px .25px transparent;
+}
+
+.o_main_navbar > .o_menu_brand:hover {
+  background-color: transparent;
+  text-shadow: -.25px -.25px 0 $white,
+                .25px .25px $white;
+}
+
+.o_main_navbar > ul > li > a, .o_main_navbar > ul > li > label{
+  text-shadow: -.25px -.25px 0 transparent,
+                .25px .25px transparent;
+}
+
+.o_main_navbar > ul > li > a:hover, .o_main_navbar > ul > li > label:hover,
+.o_main_navbar .show .dropdown-toggle {
+    background-color: transparent;
+    text-shadow: -.25px -.25px 0 $white,
+                .25px .25px $white;
+}
+
+.o_main_navbar > ul > li > a:active, .o_main_navbar > ul > li > label:active,
+.o_main_navbar .show .dropdown-toggle {
+    background-color: transparent;
+    text-shadow: -.25px -.25px 0 $white,
+                .25px .25px $white;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item .o_py {
+    background-color: transparent !important;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item .o_py:hover {
+    background-color: $primary !important;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item:hover {
+    background-color: $primary !important;
+}
+
+// Dropdown
+.dropdown-item {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.dropdown-item:hover {
+    color: $white;
+}
+
+.dropdown-menu {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: $primary;
+}
+
+.o_dropdown_menu .o_menu_item > .dropdown-item {
+    color: $body-color;
+}
+.o_dropdown_menu .o_menu_item > .dropdown-item:hover {
+    color: $body-color;
+}
+
+// Discus
+.o_widget_Discuss .o_Discuss_content {
+    border-top: 1px solid $gray-700 !important;
+}
+
+// Message List
+.o_MessageList {
+    background-color: $body-bg !important;
+}
+
+.o_Message {
+    background-color: $body-bg !important;
+}
+
+.o_MessageList_separatorLabel {
+    background-color: $body-bg !important;
+}
+
+.o_MessageList_separatorLine {
+    border-color: $gray-700 !important;
+}
+
+// Composer
+.o_Composer {
+    background-color: $body-bg;
+}
+
+.o_Composer_textInput {
+    background-color: transparent;
+    border-top: 1px solid $gray-700;
+    border-bottom: 1px solid $gray-700;
+    border-left: 1px solid $gray-700;
+}
+
+.o_Composer_toolButtons {
+    background-color: transparent;
+    border-top: 1px solid $gray-700;
+    border-bottom: 1px solid $gray-700;
+}
+
+.o_Composer_toolButton {
+    background-color: $body-bg;
+    color: $body-color;
+}
+
+.o_Composer_toolButton:hover {
+    background-color: $body-bg;
+    color: $white;
+}
+
+// Module
+.oe_module_name > span {
+    line-height: 1.5em;
+}
+
+// No Content
+.o_nocontent_help {
+    max-width: 100%;
+}
+
+.o_view_nocontent_smiling_face::before {
+    content: none !important;
+    background: none;
+}
+
+.o_view_sample_data .o_nocontent_help {
+    border-radius: 0;
+    background-color: $gray-700;
+    box-shadow: inherit;
+    width: 100%;
+    max-width: 100%;
+}
+
+.o_view_nocontent .o_nocontent_help > p:first-of-type {
+    color: $white;
+    font-weight: normal;
+}
+
+// Chatter
+.o_Chatter {
+    background-color: $body-bg;
+    border-color: $gray-700;
+}
+
+.o_Message.o-not-discussion {
+    background-color: $body-bg;
+    border-color: $gray-700;
+}
+// Chat window
+.o_ChatWindow {
+    background-color: $body-bg;
+    border-color: $body-color;
+}
+
+// Messaging Menu
+.o_MessagingMenu_dropdownMenuHeader {
+    border-bottom: 1px solid $gray-700;
+}
+
+.o_NotificationRequest {
+    background-color: $body-bg;
+}
+
+.o_NotificationRequest:hover {
+    background-color: $primary;
+}
+
+.o_ThreadPreview {
+    background-color: $body-bg;
+}
+
+.o_ThreadPreview:hover {
+    background-color: $primary;
+}
+.o_NotificationGroup {
+    background-color: $body-bg;
+}
+
+.o_NotificationGroup:hover {
+    background-color: $primary;
+}
+
+.o_ThreadPreview.o-muted, .o_ThreadPreview.o-muted:hover {
+    background-color: $gray-800;
+}
+
+// Setting
+.o_base_settings .o_setting_container .settings > .app_settings_block h2 {
+    background: transparent;
+}
+
+// Many2Many
+.o_field_widget.o_field_many2manytags .o_tag_color_0 {
+    background-color: $body-bg;
+    color: $body-color;
+    box-shadow: inset 0 0 0 1px $gray-700;
+}
+
+// Alert
+.alert-info {
+    background-color: $blue;
+}
+
+// Selection
+.o_list_selection_box {
+    background-color: $body-bg;
+}
+
+// widget
+.o_field_widget.o_field_many2one .o_external_button {
+    background: $body-bg;
+}
+
+// Pivot
+.o_pivot table th {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.o_pivot table .o_pivot_header_cell_opened, .o_pivot table .o_pivot_header_cell_opened:hover {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.o_pivot table .o_pivot_header_cell_closed, .o_pivot table .o_pivot_header_cell_closed:hover {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.o_pivot table .o_pivot_measure_row, .o_pivot table .o_pivot_measure_row:hover {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+// Pills
+.bg-success-light {
+    color: $body-color;
+}
+.bg-info-light {
+    color: $body-color;
+}
+
+// Activity View
+.o_activity_view > table {
+    color: $body-color;
+    background-color: $body-bg;
+}
+.o_activity_view .o_activity_summary_cell {
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.o_activity_view .o_activity_summary_cell.o_activity_empty_cell:hover {
+    color: $body-color;
+    background-color: $gray-500;
+}
+// List Group Item
+.list-group-item-light {
+  color: #1b1e21;
+  background-color: $body-bg;
+}
+
+.list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {
+  color: #1b1e21;
+  background-color: #b9bbbe;
+}
+
+.list-group-item-light.list-group-item-action.active {
+  color: #fff;
+  background-color: #1b1e21;
+  border-color: #1b1e21;
+}
+
+// Calendar View
+.o_calendar_view {
+    background-color: $body-bg;
+    background: linear-gradient(-45deg, $gray-800, $gray-900);
+}
+
+.o_calendar_view .o_calendar_widget .fc-widget-header {
+    border-bottom-color: $gray-600;
+}
+
+.ui-widget-content {
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+.o_calendar_sidebar_container .ui-datepicker td a, .o_calendar_sidebar_container .ui-datepicker td span {
+  color: $body-color;
+}
