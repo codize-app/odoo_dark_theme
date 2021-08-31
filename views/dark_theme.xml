@@ -2,17 +2,17 @@
     <data>
         <template id="dark_theme_assets" name="Dark Theme Assets" inherit_id="web.assets_backend">
             <xpath expr="//link[last()]" position="after">
-                <link rel="stylesheet" href="/odf_dark_theme/static/src/scss/theme.scss"/>
+                <link rel="stylesheet" href="/odoo_dark_theme/static/src/scss/theme.scss"/>
             </xpath>
         </template>
         <template id="dark_theme_primary_assets" name="Dark Theme Assets" inherit_id="web._assets_primary_variables">
             <xpath expr="//link[last()]" position="after">
-                <link rel="stylesheet" href="/odf_dark_theme/static/src/scss/theme_primary.scss"/>
+                <link rel="stylesheet" href="/odoo_dark_theme/static/src/scss/theme_primary.scss"/>
             </xpath>
         </template>
         <template id="dark_theme_secondary_assets" name="Dark Theme Assets" inherit_id="web._assets_secondary_variables">
             <xpath expr="//link[last()]" position="after">
-                <link rel="stylesheet" href="/odf_dark_theme/static/src/scss/theme_secondary.scss"/>
+                <link rel="stylesheet" href="/odoo_dark_theme/static/src/scss/theme_secondary.scss"/>
             </xpath>
         </template>
     </data>

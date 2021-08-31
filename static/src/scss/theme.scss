@@ -123,6 +123,12 @@ $font-family-base: 'Poiret One', sans-serif !default;
 .bg-100 {
     background: $body-bg !important;
 }
+.bg-danger-light {
+    color: $gray-400;
+}
+.bg-warning-light {
+    color: $gray-400;
+}
 
 // Form Sheet
 .o_form_view .o_form_sheet_bg {
@@ -230,8 +236,11 @@ select {
 }
 
 .o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.btn-primary.disabled {
-    color: $gray-700;
-    background-color: $gray-200;
+    color: $gray-100;
+    background-color: $o-community-color;
+}
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.btn-primary.disabled::after {
+    border-left-color: $o-community-color;
 }
 
 // Button
@@ -363,6 +372,7 @@ select {
 
 .dropdown-item.active, .dropdown-item:active {
     background-color: $primary;
+    color: #eee;
 }
 
 .o_dropdown_menu .o_menu_item > .dropdown-item {
@@ -602,4 +612,26 @@ select {
 
 .o_calendar_sidebar_container .ui-datepicker td a, .o_calendar_sidebar_container .ui-datepicker td span {
   color: $body-color;
+}
+
+// ToolTip
+.o_tooltip::before {
+    border: 3px solid #888;
+    background: radial-gradient(#375a7f, #375a7f);
+    box-shadow: 0 0 40px 2px rgba(255, 255, 255, 0.2);
+}
+
+//Chatter
+.o_ChatterTopbar_button:hover {
+   background: $o-community-color;
+   color:#eee;
+}
+
+//OnBoarding
+.o_onboarding {
+   background-image: none !important;
+}
+.o_onboarding.o_onboarding_violet .o_onboarding_wrap {
+   background-color: $gray-600;
+   background-image: linear-gradient(to bottom, $gray-700, $gray-800);
 }
