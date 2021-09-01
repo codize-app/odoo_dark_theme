@@ -23,7 +23,12 @@ $font-family-base: 'Poiret One', sans-serif !default;
 
 .nav-tabs,
 .nav-pills {
-  .nav-link,
+  .nav-link {
+    color: $white;
+    background-color: $gray-900;
+    border-bottom: 1px solid $gray-700;
+  }
+
   .nav-link.active,
   .nav-link.active:focus,
   .nav-link.active:hover,
@@ -31,7 +36,9 @@ $font-family-base: 'Poiret One', sans-serif !default;
   .nav-item.open .nav-link:focus,
   .nav-item.open .nav-link:hover {
     color: $white;
+    background-color: $gray-700;
   }
+  
 }
 
 .breadcrumb a {
@@ -137,7 +144,7 @@ $font-family-base: 'Poiret One', sans-serif !default;
 }
 
 .o_form_view .o_form_sheet_bg > .o_form_sheet {
-    background: $body-bg;
+    background: #222 !important;
     border: 1px solid $gray-700;
 }
 
@@ -152,6 +159,15 @@ $font-family-base: 'Poiret One', sans-serif !default;
 }
 .o_form_view .oe_button_box .btn.oe_stat_button {
     height: 50px;
+    background-color: $gray-800;
+    border-color: $gray-700;
+    color:$gray-300;
+}
+.oe_stat_button:hover {
+    background-color: $gray-700;
+}
+.o_form_view .oe_button_box .oe_stat_button .o_stat_info .o_stat_value, .o_form_view .oe_button_box .oe_stat_button > span .o_stat_value{
+    color: $teal;
 }
 
 // Table
@@ -162,13 +178,10 @@ th {
 .o_list_view thead,
 .o_list_view tfoot {
     background-color: $gray-700;
+    color: $gray-300;
 }
-
-.o_list_view .o_list_table thead,
-.o_list_view .o_list_table tfoot {
-    color: $white;
-    border-bottom: 1px solid $gray-500;
-    background-color: $gray-700;
+.o_list_view {
+    color: $gray-500;
 }
 
 .o_list_view .o_list_table tr:focus-within, .o_list_view .o_list_table.table-striped tr:focus-within {
@@ -186,6 +199,10 @@ th {
 
 .o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label {
     padding: 0 15px 0 10px;
+    color:$gray-500;
+}
+.o_form_label, .o_group {
+    color:$gray-500;
 }
 
 .o_form_view .o_horizontal_separator {
@@ -226,6 +243,11 @@ select {
     border-bottom: 1px solid $gray-700;
 }
 
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.disabled {
+    color:$gray-500;
+    background-color:$gray-700;
+}
+
 .o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):before,
 .o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):after {
     border-left: 11px solid $gray-700;
@@ -250,7 +272,23 @@ select {
 }
 
 .btn:hover, .o_dropdown:hover .o_dropdown_toggler_btn, .o_dropdown.show .o_dropdown_toggler_btn {
+    color: $gray-400;
+    background-color: $gray-800;
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+    color: $gray-500;
+    background-color: $gray-800;
+    border-color: $gray-800;
+}
+
+.btn-secondary {
+    color:$gray-500;
+    background-color:$gray-700;
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
     color: $white;
+    background-color: $gray-700;
+    border-color: $gray-700;
 }
 
 // Control Panel
@@ -282,11 +320,13 @@ select {
 // Kanban
 .o_kanban_view .o_kanban_record, .o_kanban_view .o_kanban_quick_create {
     border: 1px solid $gray-700;
-    background-color: $body-bg;
+    background-color: $gray-800;
+    color: $gray-300;
 }
 
 .o_kanban_view.o_kanban_grouped {
-    background-color: $body-bg;
+    background-color: $gray-800;
+    color: $gray-300;
 }
 
 .o_kanban_view .oe_kanban_card.oe_kanban_global_click,
@@ -301,6 +341,11 @@ select {
 }
 
 // Main Navbar
+
+.o_facet_values {
+  background-color: $gray-800;
+  color: $gray-300;
+}
 
 .o_main_navbar > a {
   text-shadow: -.25px -.25px 0 transparent,
@@ -357,17 +402,19 @@ select {
 
 // Dropdown
 .dropdown-item {
-    color: $body-color;
-    background-color: $body-bg;
+    color: $gray-300;
+    background-color: $gray-800;
 }
 
 .dropdown-item:hover {
     color: $white;
+    background-color: $primary !important;
 }
 
 .dropdown-menu {
-    color: $body-color;
-    background-color: $body-bg;
+    color: $gray-300;
+    background-color: $gray-800;
+    border-color: $gray-800;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -376,10 +423,10 @@ select {
 }
 
 .o_dropdown_menu .o_menu_item > .dropdown-item {
-    color: $body-color;
+    color: $gray-300;
 }
 .o_dropdown_menu .o_menu_item > .dropdown-item:hover {
-    color: $body-color;
+    color: $gray-300;
 }
 
 // Discus
@@ -634,4 +681,41 @@ select {
 .o_onboarding.o_onboarding_violet .o_onboarding_wrap {
    background-color: $gray-600;
    background-image: linear-gradient(to bottom, $gray-700, $gray-800);
+}
+
+//Mailing
+
+.o_mail_thread .o_thread_message.o_mail_not_discussion, .o_mail_activity .o_thread_message.o_mail_not_discussion {
+    background: $gray-900;
+    color: $gray-300;
+}
+.o_mail_thread .o_thread_date_separator .o_thread_date, .o_mail_activity .o_thread_date_separator .o_thread_date {
+    background: $gray-900;
+    color: $gray-300;
+}
+.o_pager_counter {
+    color: $gray-400;
+}
+.o_mail_discuss .o_mail_discuss_content .o_mail_thread {
+    background-color: $gray-900;
+    color: $gray-300;
+}
+.o_thread_composer:not(.o_chat_mini_composer) {
+    background-color: $gray-700;
+    border-color: $gray-700;
+}
+.o_searchview {
+    background-color: $gray-800;
+}
+.o_searchview_input {
+    background-color: $gray-800;
+    color: $gray-300;
+}
+.o_thread_composer:not(.o_chat_mini_composer) .o_composer, .o_thread_composer:not(.o_chat_mini_composer) .o_composer_subject {
+    border-color: $gray-800;
+    background: $gray-800;
+}
+.o_composer_text_field {
+    background-color: $gray-800;
+    color: $gray-300;
 }
