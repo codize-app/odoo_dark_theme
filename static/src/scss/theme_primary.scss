@@ -172,3 +172,16 @@ $btn-close-hover-opacity:    1 !default;
 // Code
 
 $pre-color:                         inherit !default;
+
+// Body
+
+body {
+  background-color:#fff !important;
+}
+
+// Report
+.o_clean_footer .pagenumber {
+   background-color:#fff !important;
+   color:#222 !important;
+   border: 0 solid #fff !important;
+}

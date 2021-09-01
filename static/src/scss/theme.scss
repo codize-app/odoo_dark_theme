@@ -90,9 +90,13 @@ $font-family-base: 'Poiret One', sans-serif !default;
       scrollbar-track-color: $background-color;
     }
   }
-  
+
   body {
       @include scrollbars(.5em, slategray);
+      background: #fff !important;
+  }
+  .o_web_client {
+      background: $body-bg !important;
   }
   select {
       @include scrollbars(.5em, slategray);
