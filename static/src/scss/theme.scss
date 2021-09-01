@@ -616,7 +616,6 @@ select {
 
 // ToolTip
 .o_tooltip::before {
-    border: 3px solid #888;
     background: radial-gradient(#375a7f, #375a7f);
     box-shadow: 0 0 40px 2px rgba(255, 255, 255, 0.2);
 }
@@ -634,4 +633,7 @@ select {
 .o_onboarding.o_onboarding_violet .o_onboarding_wrap {
    background-color: $gray-600;
    background-image: linear-gradient(to bottom, $gray-700, $gray-800);
+}
+.o_mail_thread {
+   background-color: $gray-900;
 }
